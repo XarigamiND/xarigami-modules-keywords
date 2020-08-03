@@ -1,0 +1,27 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1>
+             <xar:mlstring>Delete keyword assignment</xar:mlstring>
+        </h1>
+        <div class="xar-mod-content">
+            <xar:data-display object="$object" />
+            <form method="post">
+            <table class="xar-items">
+                <input type="hidden" name="itemid" id="itemid" value="#$itemid#" />
+                <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="confirm" value="#$confirm#" />
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+Version 1.1.2   28 Aug 2011 icedlava@2skies.com
+============================
+- Tidy the modify and update hooks
+- Fix the preview so it retains newly typed or selected keywords
+
+
+Version 1.1.1  28 Aug 2011 icedlava@2skies.com
+============================
+- Update with xarigami 1.4.0 templates
+- Add module alias
+
+Version 1.1.0   10 July 2011 icedlava@2skies.com
+============================
+- Update overview
+- Add ability to add keyword in the item GUI while adding or modifying an item.
+  Users must have AddKeyword level access.
+- Keywords added in the add/modify of an item are added to relevant restriction list
+  depending on whether the 'use itemtypes' is on/off
+- Keywords configurable alpha list
+- Update for xarigami core 1.4.0 including tabs, and removal of deprecated statemetns.

@@ -1,0 +1,123 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1>
+             <xar:mlstring>Overview</xar:mlstring>
+        </h1>
+        <div class="xar-mod-content">
+            <img src="#xarTplGetImage('admin_generic.gif', 'base')#" alt="official icon" width="96" height="96" class="xar-module-icon" />
+            <h2>
+                <xar:mlstring>What is it?</xar:mlstring>
+            </h2>
+            <p>
+                <em><xar:mlstring>Keywords is a utility module that enables you to create and assign keywords, also known as 'tags', to content items.</xar:mlstring></em>
+            </p>
+            <p>
+                <xar:mlstring>
+                    The xarigami keywords module we originally written by mikespub.
+                    The module is updated to take advantage of a number of Xarigami features as well as some enhancements
+                    that have been integrated from projects that the module has been used in over the years.
+                </xar:mlstring>
+            </p>
+            <p>
+                <xar:mlstring>The Keywords module allows you to assign keywords also known as 'tags' to module items (taxonomy) and to look up items by keyword.
+                </xar:mlstring>
+            </p>
+            <h3>
+                <xar:mlstring>How to use it?</xar:mlstring>
+            </h3>
+                <ol>
+                    <li><xar:mlstring>Keywords is installed and activated as for any other standard Xarigami module in the Administration-Modules-View All listing</xar:mlstring></li>
+                    <li><xar:mlstring>Once installed, activate keywords for specific modules and itemtypes. To do this </xar:mlstring>
+                        <a href="&xar-modurl-modules-admin-hooks;&amp;hook=keywords#currenthook"><xar:mlstring>hook the Keywords module</xar:mlstring></a><xar:mlstring>
+                        to any module or itemtype where where you want to use it.</xar:mlstring>
+                    </li>
+                    <li>
+                        <xar:mlstring>After enabling the keywords hooks for a particular module and/or itemtype, browse to </xar:mlstring>
+                        <a href="#xarModURL('keywords','admin','modifyconfig')#"><xar:mlstring>Administration-Modules-Keywords-Modify config</xar:mlstring></a>.
+                        <xar:mlstring>
+                            Keywords can be used in two different modes:
+                        </xar:mlstring>
+                        <ul>
+                            <li><xar:mlstring><strong>Restricted keywords:</strong> enable you to specify keywords per module, specific to them in the modifyconfig screen.
+                            If the  option to add keywords per itemtypes is selected you will get options for specific restricted keywords per module itemtype as well.
+                            Users can only select keywords from a given list presented to them.
+                            </xar:mlstring>
+                            </li>
+                            <li><xar:mlstring><strong>Non restricted keywords</strong> will enable users to input keywords when they create or edit an item.</xar:mlstring></li>
+                        </ul>
+                    </li>
+                  <li>
+                     <xar:mlstring>You can allow users with AddKeyword level access to add keywords to the restricted list, from the actual item instead of having to return to the Admin modify config page to do so.</xar:mlstring>
+                    </li>
+
+                </ol>
+            <h3>
+                <xar:mlstring>Displays for users</xar:mlstring>
+            </h3>
+            <p>
+                <xar:mlstring>Users viewing your site have a number of options available:</xar:mlstring>
+            </p>
+                <ul>
+                    <li><xar:mlstring>When an item is displayed that has keywords associated with it,the keyword is a displayed as a clickable link to a list of other items having the same keyword(s).</xar:mlstring></li>
+                    <li><xar:mlstring>A user menu option provides a listing of all keywords linking to all articles with that keyword.</xar:mlstring></li>
+                    <li><xar:mlstring>A 'Search by keyword' function (hook) allows users to search for keywords using the site Search module. Keywords  found link to all articles tagged with that keyword.</xar:mlstring></li>
+                </ul>
+
+            <h3>
+                <xar:mlstring>SEO and Keywords</xar:mlstring>
+            </h3>
+            <p>
+                <xar:mlstring>
+                    You can also use Keywords in your <strong>Meta Block </strong>that loads meta tags in the head of each page.
+                    The keywords from your Keyword module for any given item (eg an article) are inserted into your webpage page keyword metatag.
+                    To activate this function go to Administration-Blocks-List Blocks and edit your Meta block. Select the appropriate radio button to "Use Dynamic Keywords From"
+                </xar:mlstring>
+            </p>
+            <h3>
+                <xar:mlstring>Included Blocks</xar:mlstring>
+            </h3>
+            <p>
+               <xar:mlstring>There are no included blocks at this time (There are some in the works, incomplete and unusable at this time.)</xar:mlstring>
+            </p>
+            <h3>
+                <xar:mlstring>Included Hooks</xar:mlstring>
+            </h3>
+            <p>
+                <ul>
+                    <li><xar:mlstring><strong>new/create/modify/remove</strong> hooks allow creation, update and removal of keywords for a given item</xar:mlstring></li>
+                    <li><xar:mlstring><strong>display</strong> hook displays the keywords for a given item when the item is viewed</xar:mlstring></li>
+                     <li>
+                        <xar:mlstring>
+                            <strong>Search for keywords</strong> by enabling the search hook. Allow users to search for keywords - to do this
+                        </xar:mlstring>
+                        <a href="&xar-modurl-modules-admin-hooks;&amp;hook=keywords#currenthook"><xar:mlstring>hook the Keywords module</xar:mlstring></a>
+                        <xar:mlstring>
+                             to the Search module (not the other way around).
+                        </xar:mlstring>
+                    </li>
+                </ul>
+            </p>
+            <h3>
+                <xar:mlstring>Further Information</xar:mlstring>
+            </h3>
+            <p>
+                <xar:mlstring>Further information on the Xarigami Keywords can be found at</xar:mlstring>
+            </p>
+            <ul>
+                <li><xar:mlstring>Xarigami Keywords Project page at</xar:mlstring> <a title="#xarML('Xarigami Keywords project page')#" href="http://xarigami.com/project/xarigami_keywords">Xarigami Keywords</a>.
+                </li>
+                <li><xar:mlstring>Related tutorials and documentation on Xarigami Keywords found at</xar:mlstring> <a href="http://xarigami.com/resources/" title="#xarML('Related documentation on Xarigami Keywords')#"><xar:mlstring>Xarigami Resources</xar:mlstring></a>
+                </li>
+            </ul>
+            <p class="xar-sub">
+                <strong>&#160;<xar:mlstring>Xarigami Keywords Overview</xar:mlstring></strong><br />&nbsp;<xar:mlstring>Revision</xar:mlstring> 1.1.1&#160; 2011-07-10 .
+            </p>
+        </div>
+    </div>
+</div>

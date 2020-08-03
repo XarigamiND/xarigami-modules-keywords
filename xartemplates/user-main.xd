@@ -1,0 +1,136 @@
+<xar:comment>License: GPL http://www.gnu.org/copyleft/gpl.html</xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="user-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1>
+            <xar:ml>
+            <xar:mlstring>Overview of #(1) assignment</xar:mlstring>
+            <xar:mlvar>#$label#</xar:mlvar>
+            </xar:ml>
+        </h1>
+        <div class="xar-mod-content">
+            <xar:set name="totitems">count($items)</xar:set>
+            <xar:if condition="empty($status)">
+            <xar:comment>Nav Tabs moved to the includes folder</xar:comment>
+            <xar:if condition="xarModGetVar('keywords', 'showsort')">
+                <xar:template file="navtabs" type="module" />
+            </xar:if>
+            <xar:if condition="empty($items)">
+              <div class="xar-form-input-wrapper">
+                <h4>
+                  <xar:ml>
+                    <xar:mlstring>No #(1) found.</xar:mlstring>
+                    <xar:mlvar>#$label#</xar:mlvar>
+                </xar:ml>
+                </h4>
+              </div>
+            <xar:else />
+              <xar:comment>Start the list column output</xar:comment>
+              <xar:set name="totitemspercol">round($totitems/$displaycolumns)</xar:set>
+              <xar:set name="divwidth">round(95/$displaycolumns)</xar:set>
+              <div class="xar-form-input-wrapper">
+                <xar:while condition="count($items) gt 0">
+                  <xar:set name="i">1</xar:set>
+                  <xar:comment> Begin list column div </xar:comment>
+                  <div class="xar-floatleft xar-align-left" style="width: #$divwidth#%;">
+                    <ul>
+                    <xar:while condition="count($items) gt 0">
+                      <xar:set name="$item">array_shift($items)</xar:set>
+                      <li class="xar-list-nostyle">
+                        <a href="#$item['url']#">#$item['label']#</a> (#$item['count']#)
+                      </li>
+                      <xar:if condition="$i++ ge $totitemspercol">
+                        <xar:break/>
+                      </xar:if>
+                    </xar:while>
+                    </ul>
+                  </div>
+                  <xar:comment> End list column div </xar:comment>
+                </xar:while>
+              </div>
+            </xar:if>
+          <xar:elseif condition="$status eq 1 and !empty($keyword)" />
+            <h4>
+              <xar:ml>
+                <xar:mlstring>#(1) : #(2)</xar:mlstring>
+                <xar:mlvar>#$label#</xar:mlvar>
+                <xar:mlvar>
+                  #$keyword#
+                </xar:mlvar>
+              </xar:ml>
+            </h4>
+            <div class="xar-standard-box-padding">
+              <ul class="xar-list-nostyle">
+                <xar:foreach in="$items" key="$id" value="$item">
+                  <li>
+                    <xar:if condition="!empty($item['modname'])">
+                      [#$item['modname']#]
+                    </xar:if>
+                    <xar:if condition="!empty($item['url']) and !empty($item['label'])">
+                      <a href="#$item['url']#">
+                        #$item['label']#
+                      </a>
+                      <xar:elseif condition="!empty($item['url'])" />
+                      <xar:comment>you could skip these items </xar:comment>
+                      <a href="#$item['url']#">
+                        <xar:ml>
+                          <xar:mlstring>item #(1) </xar:mlstring>
+                          <xar:mlvar>
+                            #$item['itemid']#
+                          </xar:mlvar>
+                                        </xar:ml>
+                                    </a>
+                                <xar:else />
+                                    <xar:comment>you could skip these items </xar:comment>
+                                    <xar:mlstring>item </xar:mlstring>
+                                    #$item['moduleid']# #$item['itemtype']# #$item['itemid']#
+                                    <!-- </a> -->
+                                </xar:if>
+                            </li>
+                        </xar:foreach>
+                    </ul>
+                    <p>
+                        <a href="javascript:history.back(-1)">
+                            <xar:mlstring>Click here to go back </xar:mlstring>
+                        </a>
+                    </p>
+                </div>
+            <xar:elseif condition="$status eq 1 and empty($keyword)" />
+                <h2>
+                    <xar:ml>
+                    <xar:mlstring>No #(1)</xar:mlstring>
+                    <xar:mlvar>#$label#</xar:mlvar>
+                    </xar:ml>
+                </h2>
+            <xar:elseif condition="$status eq 2" />
+                <h2>
+                    <xar:ml>
+                    <xar:mlstring>Overview of #(1) assignment</xar:mlstring>
+                    <xar:mlvar>#$label#</xar:mlvar>
+                    </xar:ml>
+                </h2>
+                <xar:mlstring>Unable to find corresponding item</xar:mlstring>
+            <xar:elseif condition="$status eq 3" />
+                <h2>
+                    <xar:ml>
+                    <xar:mlstring>Overview of #(1) assignment</xar:mlstring>
+                    <xar:mlvar>#$label#</xar:mlvar>
+                    </xar:ml>
+                </h2>
+                <xar:mlstring>Unable to find module for the corresponding item</xar:mlstring>
+            <xar:else />
+                <h2>
+                    <xar:ml>
+                    <xar:mlstring>Overview of #(1) assignment</xar:mlstring>
+                    <xar:mlvar>#$label#</xar:mlvar>
+                    </xar:ml>
+                </h2>
+                    <xar:mlstring>Unknown status</xar:mlstring>
+          </xar:if>
+        </div>
+    </div>
+</div>

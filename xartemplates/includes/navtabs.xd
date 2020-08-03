@@ -1,0 +1,37 @@
+<xar:style scope="module" module="base" file="tabs" />
+<xar:set name="tablist">xarModGetVar('keywords','tablist');</xar:set>
+<xar:set name="other">xarModGetVar('keywords','tablistother');</xar:set>
+<xar:set name="tabarray">explode(',',$tablist);</xar:set>
+<xar:set name="dummy">$tabarray[]=$other;</xar:set>
+
+<ul class="xar-tabs">
+    <xar:if condition="$tab eq '0' OR $tab eq 'all'">
+            <li class="xar-tab-active">
+                <a href="#xarModURL('keywords', 'user', 'main', array('tab' => 'all'))#">
+                    <xar:mlstring>All</xar:mlstring>
+                </a>
+            </li>
+        <xar:else/>
+            <li class="xar-tab">
+                <a href="#xarModURL('keywords', 'user', 'main', array('tab' => 'all'))#" >
+                    <xar:mlstring>All</xar:mlstring>
+                </a>
+            </li>
+        </xar:if>
+    <xar:foreach in="$tabarray" key="$key" value="$value">
+        <xar:if condition="$tab eq $value">
+         <li class="xar-tab-active">
+                <a href="#xarModURL('keywords', 'user', 'main', array('tab' => strtolower($value)))#">
+                    #$value#
+                </a>
+            </li>
+        <xar:else/>
+            <li class="xar-tab">
+                <a href="#xarModURL('keywords', 'user', 'main', array('tab' => strtolower($value)))#" >
+                    #$value#
+                </a>
+            </li>
+        </xar:if>
+
+    </xar:foreach>
+</ul>

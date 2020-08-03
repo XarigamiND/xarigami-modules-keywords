@@ -1,0 +1,33 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1>
+             <xar:mlstring>New keyword assignment</xar:mlstring>
+        </h1>
+        <div class="xar-mod-content">
+
+            <xar:mlstring>Note : you should modify the original module item if you want to use new keywords or avoid duplicates !</xar:mlstring>
+            <form method="post">
+                <table border="0" cellpadding="5">
+                    <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                    <xar:data-form object="$object" />
+                    <tr>
+                        <td colspan="2">
+                            #$hooks#
+                        </td></tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" name="confirm" value="#$confirm#" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
