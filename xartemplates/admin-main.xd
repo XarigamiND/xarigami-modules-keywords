@@ -106,14 +106,10 @@
             <h3>
                 <xar:mlstring>Further Information</xar:mlstring>
             </h3>
-            <p>
-                <xar:mlstring>Further information on the Xarigami Keywords can be found at</xar:mlstring>
-            </p>
             <ul>
-                <li><xar:mlstring>Xarigami Keywords Project page at</xar:mlstring> <a title="#xarML('Xarigami Keywords project page')#" href="http://xarigami.com/project/xarigami_keywords">Xarigami Keywords</a>.
-                </li>
-                <li><xar:mlstring>Related tutorials and documentation on Xarigami Keywords found at</xar:mlstring> <a href="http://xarigami.com/resources/" title="#xarML('Related documentation on Xarigami Keywords')#"><xar:mlstring>Xarigami Resources</xar:mlstring></a>
-                </li>
+                <li><a href="http://xarigami.org/project/xarigami_keywords"><xar:mlstring>Xarigami Keywords project page</xar:mlstring></a></li>
+                <li><a href="http://xarigami.org/contrails/displayproject/xkeyw"><xar:mlstring>Xarigami Keywords issue tracker</xar:mlstring></a></li>
+                <li><a href="http://xarigami.org/keywords"><xar:mlstring>Articles by keywords</xar:mlstring></a></li>
             </ul>
             <p class="xar-sub">
                 <strong>&#160;<xar:mlstring>Xarigami Keywords Overview</xar:mlstring></strong><br />&nbsp;<xar:mlstring>Revision</xar:mlstring> 1.1.1&#160; 2011-07-10 .
