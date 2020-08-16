@@ -51,12 +51,11 @@ function keywords_adminapi_getwordslimited($args)
     $result = $dbconn->Execute($query,$bindvars);
 
     if (!$result) return;
-    $keywords = array();
-    $keywords = '';
     if ($result->EOF) {
         $result->Close();
-        return $keywords;
+        return '';
     }
+    $keywords = array();
     while (!$result->EOF) {
         list($id,
              $word) = $result->fields;
